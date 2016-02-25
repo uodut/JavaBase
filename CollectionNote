@@ -1,0 +1,23 @@
+Collection
+	List:有序,元素可重复 
+		ArrayList：数组，增删慢，查找快，不同步，允许null值，封装了一个动态再分配的对象数组
+		LinkedList：链表，增删快，查找慢，不同步，允许null值。
+		vector:同步，线程安全，效率低
+	Set:元素唯一,没有重复值
+		HashSet:允许null,不同步，线程不安全
+		TreeSet:允许null,不同步，线程不安全，元素有序
+		EnumSet:键值必须为枚举类型，不允许使用 null 元素，元素有序（保持输入顺序）
+		LinkedHashSet:允许null，不同步，线程不安全，
+	Deque:一个线性 collection，支持在两端插入和移除元素，（double ended queue:双端队列的缩写）
+		ArrayDeque:数组双端队列，禁止null元素，不同步。
+	Queue:队列，不允许null元素
+		PriorityQueue:
+线程安全（同步）的效率比较低,线程不安全（不同步）的效率比较高.
+Map
+	HashMap:key和value允许为null。线程不安全，基于hash表的Map接口实现
+	Hashtable:key和value均不允许为null。线程安全。哈希表
+	TreeMap:key和value均允许为null，线程不安全，基于红黑树（一种自平衡的查找树）
+	EnumMap:枚举映射中所有键都必须来自单个枚举类型,允许null值,线程不安全。
+	LinkedHashMap:接口的哈希表和链接列表实现，双重链接列表，有序的（插入顺序一致)，其他和HashMap一致
+	WeakHashMap：
+	IdentityHashMap

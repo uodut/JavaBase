@@ -1,0 +1,10 @@
+ctrl+shift+P:找到下一个括号匹配的快捷键
+Ctrl+K:查找下一个
+ctrl+shift+K:查找上一个
+ctrl+shift+F:格式整理
+alt+shift+r:重命名
+alt+方向键：将当前行的内容往上或下移动
+ctrl+.及ctrl+1：下一个错误及快速修改
+Shift+enter在当前行之下创建一个空白行，与光标是否在行末无关。
+Ctrl+shift+enter则在当前行之前插入空白行。
+ctrl+PageUp/PageDown:切换编辑器 ctrl+e:搜索所有的编辑器
