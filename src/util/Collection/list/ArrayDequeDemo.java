@@ -9,6 +9,6 @@ import java.util.ArrayDeque;
  */
 public class ArrayDequeDemo {
 	public static void main(String[] args) {
-		System.out.println("changed!");
+		System.out.println("project changed!");
 	}
 }
