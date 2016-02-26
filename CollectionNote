@@ -19,5 +19,5 @@ Map
 	TreeMap:key和value均允许为null，线程不安全，基于红黑树（一种自平衡的查找树）
 	EnumMap:枚举映射中所有键都必须来自单个枚举类型,允许null值,线程不安全。
 	LinkedHashMap:接口的哈希表和链接列表实现，双重链接列表，有序的（插入顺序一致)，其他和HashMap一致
-	WeakHashMap：
-	IdentityHashMap
+	WeakHashMap：允许null，不同步，(具体功能不太懂)
+	IdentityHashMap:引用相等，区别于HashMap的对象相等。（JVM中，每个对象都有一个独一无二的引用）

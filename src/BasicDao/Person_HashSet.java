@@ -2,7 +2,6 @@ package BasicDao;
 
 public class Person_HashSet {
 	public Person_HashSet(){
-		
 	}
 	public Person_HashSet(int age,String name){
 		this.age = age;
