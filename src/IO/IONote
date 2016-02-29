@@ -1,0 +1,22 @@
+流
+	字符流
+		Read
+			BufferedReader
+			InputStreamReader->FileReader
+		Writer
+			BufferedWriter
+			OutputStreamReader->FileWriter
+	字节流
+		InputStream
+			FileInputStream
+			FilterInputStream->BufferedInputStream
+		OutputStream
+			FileOutputStream
+			FilterOutputStream->BufferedOutputStream
+字符流和字节流的区别
+	1、字节流读取的时候，读取一个字节就返回一个字节。
+	      字符流使用字节流读取一个或者多个字节（中文对应两个字节，UTF-8对应三个字节）时，先去查指定的编码表，将查到的字符返回。 
+	2、字节流可以处理所有数据类型，如：图片，MP3,AVI视频文件 
+	       字符流只能处理字符数据。只要是纯文本数据，就要优先考虑使用字符流，除此之外都用字节流。
+	       缓冲流
+BufferedInputStream/BufferedOutputStream和BufferedWriter/BufferedReader：提高对流的操作效率
