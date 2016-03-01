@@ -1,0 +1,10 @@
+动态代理：
+	1、invoke():在调用代理对象中的每一个方法时，在代码内部，
+	都是直接调用了InvocationHandler的invoke方法，
+	而invoke方法根据代理类传递给自己的method参数来区分是什么方法。
+	2、Proxy---------->InvocationHandler--------->RealSubject
+	动态代理工作的基本模式就是将自己的方法功能的实现交给 InvocationHandler角色，
+	外界对Proxy角色中的每一个方法的调用，
+	Proxy角色都会交给InvocationHandler来处理，
+	而InvocationHandler则调用具体对象角色的方法。
+	

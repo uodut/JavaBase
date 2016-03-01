@@ -1,6 +1,6 @@
 package ClassDemo;
 
-public class 匿名内部类 {
+public class UnnameInnerClass {
 	public static void main(String[] args) {
 		InterfaceDemo id = new InterfaceDemo(){
 			public void func(){

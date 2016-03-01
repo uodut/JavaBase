@@ -4,7 +4,7 @@ package ClassDemo;
  * 内部类和外部类的成员变量和访问规则
  *
  */
-public class 常规内部类 {
+public class PlainInnerClass {
 	private int age = 11;
 	
 	public class In{
@@ -13,7 +13,7 @@ public class 常规内部类 {
 			int age = 13;
 			System.out.println("内部类的变量" + age);//默认访问外部类变量，但内部类有同名变量时覆盖外部类变量
 			System.out.println("内部成员变量"+this.age);//访问内部成员变量
-			System.out.println(常规内部类.this.age);//访问外部类的成员变量
+			System.out.println(PlainInnerClass.this.age);//访问外部类的成员变量
 		}
 		private void print2(){
 			System.out.println("外部类的私有变量" + age);
@@ -32,7 +32,7 @@ public class 常规内部类 {
 
 　　2.必须先有外部类的对象才能生成内部类的对象，因为内部类的作用就是为了访问外部类中的成员变量
 		 */
-		常规内部类.In in = new 常规内部类().new In();//内部类的实例化方式
+		PlainInnerClass.In in = new PlainInnerClass().new In();//内部类的实例化方式
 		in.print();
 		in.print2();//调用内部类的私有成员方法print2()
 		

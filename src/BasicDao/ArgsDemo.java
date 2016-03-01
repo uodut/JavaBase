@@ -1,4 +1,7 @@
 package BasicDao;
+
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * 可变参数
  * 必须为参数的最后一个，且在一个方法中只能有一个可变参数。可以把可变参数当做数组处理。
