@@ -26,6 +26,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)//如果不加这句的话，在使用反射的时候找不到此注解
 public @interface AnnotationClass {
-	public String className() default "className";
+	String className() default "className";
 }
 

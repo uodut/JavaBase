@@ -19,10 +19,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * ConcurrentSkipListMap：提供排序功能
  * 能
  */
-
 public class ConcurrentHashMapDemo {
-	public static void main(String[] args) {
-		ConcurrentHashMap<Integer,String> concurrentHashMap =  new ConcurrentHashMap<Integer,String>();
-		//concurrentHashMap.put(key, value)
-	}
+    public static void main(String[] args) {
+        ConcurrentHashMap<Integer, String> concurrentHashMap = new ConcurrentHashMap<Integer, String>();
+        // concurrentHashMap.put(key, value)
+    }
 }

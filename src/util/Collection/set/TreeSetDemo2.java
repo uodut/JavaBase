@@ -1,35 +1,29 @@
 package util.Collection.set;
-
 import java.util.TreeSet;
-
 import BasicDao.PersonTreeSet2;
 import java.util.Comparator;//比较器
-
 public class TreeSetDemo2 {
-	
-	public static void main(String[] args) {
-		//TreeSet<Person_TreeSet2> treeSet = new TreeSet<Person_TreeSet2>();
-		TreeSet<PersonTreeSet2> treeSet = new TreeSet<PersonTreeSet2>(
-				new Comparator<PersonTreeSet2>(){
-					public int compare(PersonTreeSet2 pt1,PersonTreeSet2 pt2){
-						int nameCompareResult = pt1.getName().compareTo(pt2.getName());
-						int ageCompareResult = pt1.getAge() - pt2.getAge();
-						//排序规则:年龄相等按姓名排序，年龄不等按年龄排序
-						//int result = ageCompareResult == 0 ?nameCompareResult:ageCompareResult;
-						//排序规则：姓式相同按年龄排序，姓式不同按姓式排序
-						int result = nameCompareResult == 0 ?ageCompareResult:nameCompareResult;
-						return result;
-					}
-				}
-			);
-		treeSet.add(new PersonTreeSet2(20,"wang"));
-		treeSet.add(new PersonTreeSet2(30,"zhao"));
-		treeSet.add(new PersonTreeSet2(19,"zhang"));
-		treeSet.add(new PersonTreeSet2(25,"liu"));
-		treeSet.add(new PersonTreeSet2(20,"gao"));
-		treeSet.add(new PersonTreeSet2(22,"wang"));
-		
-		
+    public static void main(String[] args) {
+        // TreeSet<Person_TreeSet2> treeSet = new TreeSet<Person_TreeSet2>();
+        TreeSet<PersonTreeSet2> treeSet = new TreeSet<PersonTreeSet2>(
+                new Comparator<PersonTreeSet2>() {
+                    public int compare(PersonTreeSet2 pt1, PersonTreeSet2 pt2) {
+                        int nameCompareResult = pt1.getName().compareTo(pt2.getName());
+                        int ageCompareResult = pt1.getAge() - pt2.getAge();
+                        // 排序规则:年龄相等按姓名排序，年龄不等按年龄排序
+                        // int result = ageCompareResult == 0
+                        // ?nameCompareResult:ageCompareResult;
+                        // 排序规则：姓式相同按年龄排序，姓式不同按姓式排序
+                        int result = nameCompareResult == 0 ? ageCompareResult : nameCompareResult;
+                        return result;
+                    }
+                });
+        treeSet.add(new PersonTreeSet2(20, "wang"));
+        treeSet.add(new PersonTreeSet2(30, "zhao"));
+        treeSet.add(new PersonTreeSet2(19, "zhang"));
+        treeSet.add(new PersonTreeSet2(25, "liu"));
+        treeSet.add(new PersonTreeSet2(20, "gao"));
+        treeSet.add(new PersonTreeSet2(22, "wang"));
 	/*	TreeSet<Person_TreeSet2> ts = new TreeSet<Person_TreeSet2>(new Comparator<Person_TreeSet2>() {
 		    public int compare(Person_TreeSet2 s1, Person_TreeSet2 s2) {
 		     // 比较年龄
@@ -42,15 +36,13 @@ public class TreeSetDemo2 {
 		     return nameCompareResult;
 		   }
 		   });*/
-	
-		display(treeSet);
-		System.out.println(treeSet.size());
-	}
-	
-	static void display(TreeSet<PersonTreeSet2> treeSet) {
-		System.out.println("姓名" + '\t' + "年龄");
-		for (PersonTreeSet2 p : treeSet) {
-			System.out.println(p.getName() + '\t' + p.getAge());
-		}
-	}
+        display(treeSet);
+        System.out.println(treeSet.size());
+    }
+    static void display(TreeSet<PersonTreeSet2> treeSet) {
+        System.out.println("姓名" + '\t' + "年龄");
+        for (PersonTreeSet2 p : treeSet) {
+            System.out.println(p.getName() + '\t' + p.getAge());
+        }
+    }
 }

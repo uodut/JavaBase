@@ -1,5 +1,4 @@
 package util.Collection.set;
-
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -20,38 +19,35 @@ import BasicDao.PersonHashSet;
 		相等，比较equals（）是否相等。如果二者都相等，则不能添加。
  */
 public class HashSetDemo {
-	static HashSet<PersonHashSet> hashSet = new HashSet<PersonHashSet>();
-	public static void main(String[] args) {
-		PersonHashSet person1 = new PersonHashSet(20,"zhang");
-		PersonHashSet person5 = new PersonHashSet(20,"zhang");
-		PersonHashSet person2 = new PersonHashSet(20,"wang");
-		PersonHashSet person3 = new PersonHashSet(22,"li");
-		PersonHashSet person4 = new PersonHashSet(20,"li");
-		hashSet.add(person1);
-		hashSet.add(person2);
-		hashSet.add(person3);
-		hashSet.add(person4);
-		hashSet.add(person5);
-		
-		
-		display2(hashSet);
-		System.out.println(person1.hashCode());
-		System.out.println(person5.hashCode());
-		System.out.println(person1.equals(person5));
-		System.out.println(hashSet.size());
-		
-	}
-	static void display(HashSet<PersonHashSet> hashSet ){
-		Iterator<PersonHashSet> it = hashSet.iterator();
-		System.out.println("姓名" + '\t' + "年龄");
-		while(it.hasNext()){
-			System.out.println(it.next().getName()+'\t' + it.next().getAge());
-		}
-	}
-	static void display2(HashSet<PersonHashSet> hashSet){
-		System.out.println("姓名" + '\t' + "年龄");
-		for(PersonHashSet p:hashSet){
-			System.out.println(p.getName()+'\t' + p.getAge());
-		}
-	}
+    static HashSet<PersonHashSet> hashSet = new HashSet<PersonHashSet>();
+    public static void main(String[] args) {
+        PersonHashSet person1 = new PersonHashSet(20, "zhang");
+        PersonHashSet person5 = new PersonHashSet(20, "zhang");
+        PersonHashSet person2 = new PersonHashSet(20, "wang");
+        PersonHashSet person3 = new PersonHashSet(22, "li");
+        PersonHashSet person4 = new PersonHashSet(20, "li");
+        hashSet.add(person1);
+        hashSet.add(person2);
+        hashSet.add(person3);
+        hashSet.add(person4);
+        hashSet.add(person5);
+        display2(hashSet);
+        System.out.println(person1.hashCode());
+        System.out.println(person5.hashCode());
+        System.out.println(person1.equals(person5));
+        System.out.println(hashSet.size());
+    }
+    static void display(HashSet<PersonHashSet> hashSet) {
+        Iterator<PersonHashSet> it = hashSet.iterator();
+        System.out.println("姓名" + '\t' + "年龄");
+        while (it.hasNext()) {
+            System.out.println(it.next().getName() + '\t' + it.next().getAge());
+        }
+    }
+    static void display2(HashSet<PersonHashSet> hashSet) {
+        System.out.println("姓名" + '\t' + "年龄");
+        for (PersonHashSet p : hashSet) {
+            System.out.println(p.getName() + '\t' + p.getAge());
+        }
+    }
 }

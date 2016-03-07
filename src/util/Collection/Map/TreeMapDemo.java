@@ -1,12 +1,9 @@
 package util.Collection.Map;
-
 import java.util.Comparator;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-
 import BasicDao.PersonTreeMap;
-
 /**
  * 底层实现为红黑树（一种自平衡的二叉查找树）
  * 1、TreeMap根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序

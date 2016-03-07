@@ -1,9 +1,7 @@
 package util.Collection.list;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 /**
  * @author UODUT
  * 
@@ -34,52 +32,49 @@ import java.util.List;
  * 	
  */
 public class ArrayListDemo {
-	public static void main(String[] args) {
-		List<String> arrayList = new ArrayList<String>();
-		List<String> other = new ArrayList<String>();//测试使用
-		//添加元素
-		arrayList.add("apple");
-		arrayList.add("apple");
-		arrayList.add("iphone");
-		arrayList.add("last");
-		arrayList.add("another");
-		arrayList.add(null);
-		
-		other.add("another");
-		other.add("apple");
-		//迭代器遍历
-		
-		Iterator<String> it = arrayList.iterator();//返回一个迭代器对象
-		while(it.hasNext()){
-			if(it.hasNext()){
-				System.out.println(it.next());//到达集合末尾，next()方法会抛出一个NoSuchElementException异常
-			}
-		}
-		System.out.println("--------第二种方式--------");
-		it.remove();
-		for(String s:arrayList){
-			System.out.println(s);
-		}
-		//集合中元素的个数
-		System.out.println(arrayList.size());
-		//contains()区分大小写
-		System.out.println(arrayList.size());
-		System.out.println(arrayList.contains("LAST"));
-		System.out.println(arrayList.size()+"--------");
-		//retainAll(Collection<?> other)
-		//System.out.println(arrayList.retainAll(other));
-		
-		//get()
-		System.out.println(arrayList.get(0)+"-------get()--------");
-		//set()
-		System.out.println(arrayList.set(0,"orange"));
-		print(arrayList);
-		System.out.println("iphone出现的位置为"+arrayList.indexOf("iphone"));
-	}
-	public static void print(List<String> arrayList){
-		Object[] array = arrayList.toArray();
-		for(int i = 0 ; i < array.length; i ++){
-			System.out.println(array[i]);
-		}
-	}
+    public static void main(String[] args) {
+        List<String> arrayList = new ArrayList<String>();
+        List<String> other = new ArrayList<String>();// 测试使用
+        // 添加元素
+        arrayList.add("apple");
+        arrayList.add("apple");
+        arrayList.add("iphone");
+        arrayList.add("last");
+        arrayList.add("another");
+        arrayList.add(null);
+        other.add("another");
+        other.add("apple");
+        // 迭代器遍历
+        Iterator<String> it = arrayList.iterator();// 返回一个迭代器对象
+        while (it.hasNext()) {
+            if (it.hasNext()) {
+                System.out.println(it.next());// 到达集合末尾，next()方法会抛出一个NoSuchElementException异常
+            }
+        }
+        System.out.println("--------第二种方式--------");
+        it.remove();
+        for (String s : arrayList) {
+            System.out.println(s);
+        }
+        // 集合中元素的个数
+        System.out.println(arrayList.size());
+        // contains()区分大小写
+        System.out.println(arrayList.size());
+        System.out.println(arrayList.contains("LAST"));
+        System.out.println(arrayList.size() + "--------");
+        // retainAll(Collection<?> other)
+        // System.out.println(arrayList.retainAll(other));
+        // get()
+        System.out.println(arrayList.get(0) + "-------get()--------");
+        // set()
+        System.out.println(arrayList.set(0, "orange"));
+        print(arrayList);
+        System.out.println("iphone出现的位置为" + arrayList.indexOf("iphone"));
+    }
+    public static void print(List<String> arrayList) {
+        Object[] array = arrayList.toArray();
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
 }

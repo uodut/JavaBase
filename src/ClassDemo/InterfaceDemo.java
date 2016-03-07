@@ -9,18 +9,15 @@ package ClassDemo;
  *
  */
 public interface InterfaceDemo {
-	public static void main(String[] args){
-		
-	}
-	public static final int age = 0;//修饰符为public static final,默认为public static final
-	//一般成员方法
-	void func();
-	/**
-	 * 静态成员方法
-	 */
-	public static  int func1(){
-		return age;
-	}
+    int AgeDeaclare = 0;// 修饰符为public static final,默认为public static final
+    // 一般成员方法
+    void func();
+    /**
+     * 静态成员方法
+     */
+    public static int func1() {
+        return AgeDeaclare;
+    }
 	//不能含有静态代码块，静态代码块一般用来在加载类的时候用来初始化。
 	/*static { 
 		System.out.println("parent static block"); 

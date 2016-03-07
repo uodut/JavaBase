@@ -1,5 +1,4 @@
 package util.Collection.set;
-
 import java.util.LinkedHashSet;
 /**
  * @author UODUT
@@ -10,24 +9,24 @@ import java.util.LinkedHashSet;
  *
  */
 public class LinkedHashSetDemo {
-	public static void main(String[] args) {
-		LinkedHashSet<String> ls = new LinkedHashSet<String>();
-		ls.add("john snow");
-		ls.add("evil");
-		ls.add("joxiya");
-		ls.add("hunt");
-		System.out.println("--------显示顺序和插入顺序一致--------");
-		display(ls);
-		ls.add("test");
-		System.out.println("--------插入元素后显示顺序不变--------");
-		display(ls);
-		ls.remove("evil");
-		System.out.println("---------删除元素后原元素显示顺序依然不变-------");
-		display(ls);
-	}
-	static void display(LinkedHashSet<String> ls){
-		for(String s:ls){
-			System.out.println(s);
-		}
-	}
+    public static void main(String[] args) {
+        LinkedHashSet<String> ls = new LinkedHashSet<String>();
+        ls.add("john snow");
+        ls.add("evil");
+        ls.add("joxiya");
+        ls.add("hunt");
+        System.out.println("--------显示顺序和插入顺序一致--------");
+        display(ls);
+        ls.add("test");
+        System.out.println("--------插入元素后显示顺序不变--------");
+        display(ls);
+        ls.remove("evil");
+        System.out.println("---------删除元素后原元素显示顺序依然不变-------");
+        display(ls);
+    }
+    static void display(LinkedHashSet<String> ls) {
+        for (String s : ls) {
+            System.out.println(s);
+        }
+    }
 }

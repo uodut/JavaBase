@@ -10,12 +10,12 @@ package ClassDemo;
  *
  */
 public abstract class InnerClassDemo {
-	public static void main(String[] args) {
-		//InnerClassDemo id = new InnerClassDemo();//没有具体实现的方法，所以不能实例化
-	}
-	public InnerClassDemo() {
-		// TODO Auto-generated constructor stub
-	}
+    public static void main(String[] args) {
+        // InnerClassDemo id = new InnerClassDemo();//没有具体实现的方法，所以不能实例化
+    }
+    public InnerClassDemo() {
+        // TODO Auto-generated constructor stub
+    }
 	
 	
 	

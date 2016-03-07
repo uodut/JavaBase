@@ -1,12 +1,10 @@
 package Reflect;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import BasicDao.PersonReflect;
-import BasicDao.PersonReflect_son;
-
+import BasicDao.PersonReflectSon;
 /*
  1、Java反射的概念
 　　反射含义：可以获取正在运行的Java对象。
@@ -43,7 +41,7 @@ ReflectDemo {
 		// 获取一个类的Class对象
 		Class<?> c1 = PersonReflect.class;
 		Class<?> c2 = Class.forName("BasicDao.Person_Reflect");
-		Class<?> c3 = new PersonReflect_son().getClass();
+		Class<?> c3 = new PersonReflectSon().getClass();
 		// 获取指定的包名
 		String packageName1 = c1.getPackage().getName();// out->BasicDao
 		String packageName2 = c2.getPackage().getName();// out->BasicDao

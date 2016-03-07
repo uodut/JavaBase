@@ -1,5 +1,4 @@
 package util.Collection.set;
-
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -18,57 +17,49 @@ import BasicDao.PersonTreeSet;
  *   					根据比较结果使用二叉树形式进行存储
  *   			二、
  */
-
 public class TreeSetDemo {
-	public static void main(String[] args) {
-		TreeSet<PersonTreeSet> treeSet = new TreeSet<PersonTreeSet>();
-		treeSet.add(new PersonTreeSet(20,"wang"));
-		treeSet.add(new PersonTreeSet(30,"zhao"));
-		treeSet.add(new PersonTreeSet(21,"zhang"));
-		treeSet.add(new PersonTreeSet(20,"liu"));
-		treeSet.add(new PersonTreeSet(20,"wang"));
-
-		//自然排序
-/*		TreeSet<Integer> treeSet = new TreeSet<Integer>();
-		treeSet.add(10);
-		treeSet.add(32);
-		treeSet.add(3);
-		treeSet.add(22);
-		treeSet.add(12);
-		
-		treeSet.add(21);
-		treeSet.add(12);
-		
-		treeSet.add(22);*/
-		
-		display(treeSet);
-	}
-
-	// 自然排序
-	static void display2(TreeSet<Integer> treeSet) {
-		for (Integer i : treeSet) {
-			System.out.println(i);
-		}
-	}
-
-	// 迭代器
-	static void display1(TreeSet<PersonTreeSet> pt) {
-		System.out.println("姓名" + '\t' + "年龄");
-		Iterator<PersonTreeSet> it = pt.iterator();
-		int i = 0;
-		PersonTreeSet ps = null;
-		while (it.hasNext()) {// Iterator的next方法每调用一次就会得到集合中的一个元素
-			ps = it.next();
-			// 错误的，这样会调用第一个人的姓名和第二个人的名字
-			// System.out.println(it.next().getName() + it.next().getAge());×
-			System.out.println(ps.getName() + '\t' + ps.getAge());
-		}
-	}
-	// 对象排序-For
-	static void display(TreeSet<PersonTreeSet> treeSet) {
-		System.out.println("姓名" + '\t' + "年龄");
-		for (PersonTreeSet p : treeSet) {
-			System.out.println(p.getName() + '\t' + p.getAge());
-		}
-	}
+    public static void main(String[] args) {
+        TreeSet<PersonTreeSet> treeSet = new TreeSet<PersonTreeSet>();
+        treeSet.add(new PersonTreeSet(20, "wang"));
+        treeSet.add(new PersonTreeSet(30, "zhao"));
+        treeSet.add(new PersonTreeSet(21, "zhang"));
+        treeSet.add(new PersonTreeSet(20, "liu"));
+        treeSet.add(new PersonTreeSet(20, "wang"));
+        // 自然排序
+        /*
+         * TreeSet<Integer> treeSet = new TreeSet<Integer>(); treeSet.add(10);
+         * treeSet.add(32); treeSet.add(3); treeSet.add(22); treeSet.add(12);
+         * 
+         * treeSet.add(21); treeSet.add(12);
+         * 
+         * treeSet.add(22);
+         */
+        display(treeSet);
+    }
+    // 自然排序
+    static void display2(TreeSet<Integer> treeSet) {
+        for (Integer i : treeSet) {
+            System.out.println(i);
+        }
+    }
+    // 迭代器
+    static void display1(TreeSet<PersonTreeSet> pt) {
+        System.out.println("姓名" + '\t' + "年龄");
+        Iterator<PersonTreeSet> it = pt.iterator();
+        int i = 0;
+        PersonTreeSet ps = null;
+        while (it.hasNext()) {// Iterator的next方法每调用一次就会得到集合中的一个元素
+            ps = it.next();
+            // 错误的，这样会调用第一个人的姓名和第二个人的名字
+            // System.out.println(it.next().getName() + it.next().getAge());×
+            System.out.println(ps.getName() + '\t' + ps.getAge());
+        }
+    }
+    // 对象排序-For
+    static void display(TreeSet<PersonTreeSet> treeSet) {
+        System.out.println("姓名" + '\t' + "年龄");
+        for (PersonTreeSet p : treeSet) {
+            System.out.println(p.getName() + '\t' + p.getAge());
+        }
+    }
 }

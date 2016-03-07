@@ -1,5 +1,5 @@
 package DesignMode.StaticProxy;
 public interface GiveGift {
-	void sendFlower();//送花
-	void GiveDolls();//送布偶
+    void sendFlower();// 送花
+    void giveDolls();// 送布偶
 }

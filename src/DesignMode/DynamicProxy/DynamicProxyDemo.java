@@ -1,5 +1,4 @@
 package DesignMode.DynamicProxy;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 /**
@@ -14,19 +13,20 @@ import java.lang.reflect.Proxy;
     6.   Proxy 的class对象 以创建的handler对象为参数，实例化一个proxy对象
  */
 public class DynamicProxyDemo {
-	public static void main(String[] args) {
-		Bird bird = new Bird();
-		//1、获取对应的ClassLoader  
-		ClassLoader classLoader = bird.getClass().getClassLoader();
-		//2、获取Bird 所实现的所有接口 
-		Class<?>[] interfaces = bird.getClass().getInterfaces();
-		// 3.设置一个来自代理传过来的方法调用请求处理器，处理所有的代理对象上的方法调用
-		InvocationHandler handler = new InvocationHandlerImpl(bird);//留出invoke()接口
-		//4、调用newInstance()创建实例
-		Object obj = Proxy.newProxyInstance(classLoader, interfaces, handler);//返回一个指定接口的代理类实例,该接口可以将方法调用指派到指定的调用处理程序。
-		Flyable fly = (Flyable)obj;
-		fly.fly();
-		Sound sound = (Sound)obj;
-		sound.sound();
-	}
+    public static void main(String[] args) {
+        Bird bird = new Bird();
+        // 1、获取对应的ClassLoader
+        ClassLoader classLoader = bird.getClass().getClassLoader();
+        // 2、获取Bird 所实现的所有接口
+        Class<?>[] interfaces = bird.getClass().getInterfaces();
+        // 3.设置一个来自代理传过来的方法调用请求处理器，处理所有的代理对象上的方法调用
+        InvocationHandler handler = new InvocationHandlerImpl(bird);// 留出invoke()接口
+        // 4、调用newInstance()创建实例
+     // 返回一个指定接口的代理类实例,该接口可以将方法调用指派到指定的调用处理程序。
+        Object obj = Proxy.newProxyInstance(classLoader, interfaces, handler);
+        Flyable fly = (Flyable) obj;
+        fly.fly();
+        Sound sound = (Sound) obj;
+        sound.sound();
+    }
 }

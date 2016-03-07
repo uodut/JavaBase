@@ -1,5 +1,4 @@
 package util.Collection.list;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 /**
@@ -29,32 +28,30 @@ import java.util.LinkedList;
  *
  */
 public class LinkedListDemo {
-	static LinkedList<String> ll = new LinkedList<String>();
-	public static void main(String[] args) {
-		
-		ll.add("john");
-		ll.add("ross");
-		ll.add("jack");
-		ll.add("halen");
-		ll.add("joffery");
-		ll.add("halen");
-		ll.add("chandler");
-		
-		String str = ll.pop();
-		System.out.println(ll.size());
-		String str2 = ll.pop();
-		System.out.println(ll.size());
-		System.out.println(str2);
-		ll.offer("lastelement");
-		display();
-		System.out.println("111111111111111");
-		ll.removeFirstOccurrence("halen");
-		display();
-	}
-	static void display(){
-		Iterator<String> it =ll.iterator();
-		while(it.hasNext()){
-			System.out.println(it.next());
-		}
-	}
+    static LinkedList<String> ll = new LinkedList<String>();
+    public static void main(String[] args) {
+        ll.add("john");
+        ll.add("ross");
+        ll.add("jack");
+        ll.add("halen");
+        ll.add("joffery");
+        ll.add("halen");
+        ll.add("chandler");
+        String str = ll.pop();
+        System.out.println(ll.size());
+        String str2 = ll.pop();
+        System.out.println(ll.size());
+        System.out.println(str2);
+        ll.offer("lastelement");
+        display();
+        System.out.println("111111111111111");
+        ll.removeFirstOccurrence("halen");
+        display();
+    }
+    static void display() {
+        Iterator<String> it = ll.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
 }

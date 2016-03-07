@@ -1,5 +1,4 @@
 package util.Collection.Map;
-
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -24,41 +23,40 @@ import java.util.Set;
  *
  */
 public class HashMapDemo {
-	public static void main(String[] args) {
-		HashMap<String,Integer> hashMap = new HashMap<String,Integer>();
-		hashMap.put("wang", 20);
-		hashMap.put("zhang", 19);
-		hashMap.put("liu", 20);
-		hashMap.put("li", 19);
-		hashMap.put("liu", 21);//自动覆盖第一个相同的key
-		hashMap.put(null, null);
-		//hashMap.put(null, 0);
-		System.out.println("--------第一种方式---------");
-		display1(hashMap);
-		System.out.println("--------第二种方式---------");
-		display2(hashMap);
-	}
-	//根据键找值
-	static void display1(HashMap<String, Integer> hm) {
-		// 得到所有的key值
-		Set<String> names = hm.keySet();
-		System.out.println("姓名" + '\t' + "年龄");
-		for (String name : names) {
-			System.out.println(name + '\t' + hm.get(name));
-		}
-	}
-
-	// 根据键值对找键和值
-	static void display2(HashMap<String, Integer> hm) {
-		System.out.println("姓名" + '\t' + "年龄");
-		String name = null;
-		Integer age = null;
-		//找到set视图
-		Set<Entry<String, Integer>> set = hm.entrySet();
-		for (Entry<String, Integer> s : set) {
-				 name = s.getKey();
-				 age = s.getValue();
-				 System.out.println(name + '\t' + age);
-			}
-		}
+    public static void main(String[] args) {
+        HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+        hashMap.put("wang", 20);
+        hashMap.put("zhang", 19);
+        hashMap.put("liu", 20);
+        hashMap.put("li", 19);
+        hashMap.put("liu", 21);// 自动覆盖第一个相同的key
+        hashMap.put(null, null);
+        // hashMap.put(null, 0);
+        System.out.println("--------第一种方式---------");
+        display1(hashMap);
+        System.out.println("--------第二种方式---------");
+        display2(hashMap);
+    }
+    // 根据键找值
+    static void display1(HashMap<String, Integer> hm) {
+        // 得到所有的key值
+        Set<String> names = hm.keySet();
+        System.out.println("姓名" + '\t' + "年龄");
+        for (String name : names) {
+            System.out.println(name + '\t' + hm.get(name));
+        }
+    }
+    // 根据键值对找键和值
+    static void display2(HashMap<String, Integer> hm) {
+        System.out.println("姓名" + '\t' + "年龄");
+        String name = null;
+        Integer age = null;
+        // 找到set视图
+        Set<Entry<String, Integer>> set = hm.entrySet();
+        for (Entry<String, Integer> s : set) {
+            name = s.getKey();
+            age = s.getValue();
+            System.out.println(name + '\t' + age);
+        }
+    }
 }

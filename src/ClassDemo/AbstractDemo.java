@@ -1,5 +1,4 @@
 package ClassDemo;
-
 /**
  * 特点：
  * 1、修饰符为public或者protected，默认为public
@@ -8,11 +7,11 @@ package ClassDemo;
  * 		则子类本身也需要声明为抽象的。【也就是说含有abstract关键字的类才可以声明抽象方法】
  */
 public abstract class AbstractDemo {
-	public int age;
-	public AbstractDemo() {
-		// TODO Auto-generated constructor stub
-	}
-	void func(){
-	}
-	abstract void func1();//抽象方法
+    public int age;
+    public AbstractDemo() {
+        // TODO Auto-generated constructor stub
+    }
+    void func() {
+    }
+    abstract void func1();// 抽象方法
 }
