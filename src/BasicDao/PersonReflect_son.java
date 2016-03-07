@@ -1,6 +1,6 @@
 package BasicDao;
 
-public class Person_Reflect_son extends Person_Reflect {
+public class PersonReflect_son extends PersonReflect {
 	
 	private String address;
 	public int members;
@@ -21,13 +21,13 @@ public class Person_Reflect_son extends Person_Reflect {
 		this.members = members;
 	}
 
-	public Person_Reflect_son(int age, int score, String name) {
+	public PersonReflect_son(int age, int score, String name) {
 		super(age, score, name);
 		// TODO Auto-generated constructor stub
 		
 	}
 
-	public Person_Reflect_son() {
+	public PersonReflect_son() {
 		super();
 	}
 

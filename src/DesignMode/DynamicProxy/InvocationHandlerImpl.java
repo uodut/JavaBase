@@ -20,7 +20,7 @@ public class InvocationHandlerImpl implements InvocationHandler {
 			throws Throwable {
 		System.out.println("你将调用invoke方法，当前方法名为" +method.getName() );
 		//method.invoke(bird,null);
-		method.invoke(bird, null);//调用bird的method方法
+		method.invoke(bird, args);//调用bird的method方法
 		System.out.println(method.getName()+"已经调用完毕");
 		return null;
 	}

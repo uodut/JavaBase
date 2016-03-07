@@ -1,6 +1,6 @@
 package BasicDao;
 
-public  class Person_Reflect {
+public  class PersonReflect {
 	private int age;
 	int score;
 	public String name;
@@ -39,7 +39,7 @@ public  class Person_Reflect {
 	}
 
 	
-	public Person_Reflect(int age, int score, String name) {
+	public PersonReflect(int age, int score, String name) {
 		this.age = age;
 		this.score = score;
 		this.name = name;
@@ -54,6 +54,6 @@ public  class Person_Reflect {
 	}
 	
 	
-	public Person_Reflect(){
+	public PersonReflect(){
 	}
 }

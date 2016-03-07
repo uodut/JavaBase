@@ -1,6 +1,6 @@
 package BasicDao;
 
-public class Person_TreeSet implements Comparable<Object>{
+public class PersonTreeSet implements Comparable<Object>{
 	private int age;
 	private String name;
 	public int getAge() {
@@ -15,13 +15,13 @@ public class Person_TreeSet implements Comparable<Object>{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Person_TreeSet(int age, String name) {
+	public PersonTreeSet(int age, String name) {
 		this.age = age;
 		this.name = name;
 	}
 	@Override
 	public int compareTo(Object o) {
-		Person_TreeSet pt = (Person_TreeSet)o;
+		PersonTreeSet pt = (PersonTreeSet)o;
 		int ageCompareResult = this.age - pt.getAge();
 		int nameCompare = this.name.compareTo(pt.getName());
 		//比较规则：年龄相同按照姓名顺序排序，年龄不同按照年龄大小排序

@@ -1,6 +1,6 @@
 package BasicDao;
 
-public class Person_TreeMap {
+public class PersonTreeMap {
 	private int score;
 	private String name;
 	public int getScore() {
@@ -15,7 +15,7 @@ public class Person_TreeMap {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Person_TreeMap(int score, String name) {
+	public PersonTreeMap(int score, String name) {
 		this.score = score;
 		this.name = name;
 	}

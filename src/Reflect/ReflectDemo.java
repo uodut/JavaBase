@@ -4,8 +4,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import BasicDao.Person_Reflect;
-import BasicDao.Person_Reflect_son;
+import BasicDao.PersonReflect;
+import BasicDao.PersonReflect_son;
 
 /*
  1、Java反射的概念
@@ -41,9 +41,9 @@ public class
 ReflectDemo {
 	public static void main(String[] args) throws Exception {
 		// 获取一个类的Class对象
-		Class<?> c1 = Person_Reflect.class;
+		Class<?> c1 = PersonReflect.class;
 		Class<?> c2 = Class.forName("BasicDao.Person_Reflect");
-		Class<?> c3 = new Person_Reflect_son().getClass();
+		Class<?> c3 = new PersonReflect_son().getClass();
 		// 获取指定的包名
 		String packageName1 = c1.getPackage().getName();// out->BasicDao
 		String packageName2 = c2.getPackage().getName();// out->BasicDao
@@ -128,7 +128,7 @@ ReflectDemo {
 	/*-----------------------------------------------------------------------------------------*/
 	//方法使用：给类的属性赋值
 	static void executeMethod(Class<?> c) throws Exception{
-		Person_Reflect pr = (Person_Reflect)c.newInstance();
+		PersonReflect pr = (PersonReflect)c.newInstance();
 		Method method = c.getDeclaredMethod("setName", String.class);
 		method.invoke(pr, "tudou");
 		System.out.println(pr.getName());

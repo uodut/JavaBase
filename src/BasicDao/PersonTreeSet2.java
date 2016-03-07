@@ -1,6 +1,6 @@
 package BasicDao;
 
-public class Person_TreeSet2{
+public class PersonTreeSet2{
 	private int age;
 	private String name;
 	public int getAge() {
@@ -15,7 +15,7 @@ public class Person_TreeSet2{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Person_TreeSet2(int age, String name) {
+	public PersonTreeSet2(int age, String name) {
 		this.age = age;
 		this.name = name;
 	}

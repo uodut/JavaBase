@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-import BasicDao.Person_TreeMap;
+import BasicDao.PersonTreeMap;
 
 /**
  * 底层实现为红黑树（一种自平衡的二叉查找树）
@@ -88,10 +88,10 @@ Map.Entry<K,V> ceilingEntry(K key)
 public class TreeMapDemo {
 	public static void main(String[] args) {
 		//排序规则
-		TreeMap<Person_TreeMap, String> tm = new TreeMap<Person_TreeMap, String>(
-				new Comparator<Person_TreeMap>() {
+		TreeMap<PersonTreeMap, String> tm = new TreeMap<PersonTreeMap, String>(
+				new Comparator<PersonTreeMap>() {
 					@Override
-					public int compare(Person_TreeMap pt1, Person_TreeMap pt2) {
+					public int compare(PersonTreeMap pt1, PersonTreeMap pt2) {
 						int ageCompareResult = pt1.getScore() - pt2.getScore();
 						int nameCompareResult = pt1.getName().compareTo(
 								pt2.getName());
@@ -101,10 +101,10 @@ public class TreeMapDemo {
 						return result;
 					}
 				});
-		tm.put(new Person_TreeMap(95,"tudou"),"第一名");
-		tm.put(new Person_TreeMap(92,"tiny"),"第二名");
-		tm.put(new Person_TreeMap(90,"monica"),"第三名");
-		tm.put(new Person_TreeMap(59,"zack"),"第四名");
+		tm.put(new PersonTreeMap(95,"tudou"),"第一名");
+		tm.put(new PersonTreeMap(92,"tiny"),"第二名");
+		tm.put(new PersonTreeMap(90,"monica"),"第三名");
+		tm.put(new PersonTreeMap(59,"zack"),"第四名");
 		
 		//第一种方法
 		System.out.println("---------第一种方法-----------");
@@ -113,21 +113,21 @@ public class TreeMapDemo {
 		display2(tm);
 	}
 	//根据key找value，遍历
-	static void display1(TreeMap<Person_TreeMap,String> tm){
-		Set<Person_TreeMap> set= tm.keySet();
+	static void display1(TreeMap<PersonTreeMap,String> tm){
+		Set<PersonTreeMap> set= tm.keySet();
 		System.out.println("姓名" + '\t' + "分数" + '\t' +  "排名");
-		for(Person_TreeMap pt:set){
+		for(PersonTreeMap pt:set){
 			System.out.println(pt.getName() + '\t' + pt.getScore() + '\t' + tm.get(pt) );
 		}
 	}
 	//根据视图遍历
-	static void display2(TreeMap<Person_TreeMap,String> tm){
-		Set<Entry<Person_TreeMap, String>>set = tm.entrySet();
+	static void display2(TreeMap<PersonTreeMap,String> tm){
+		Set<Entry<PersonTreeMap, String>>set = tm.entrySet();
 		String name = null;
 		Integer score = null;
 		String level = null;
 		System.out.println("姓名" + '\t' + "分数" + '\t' +  "排名");
-		for(Entry<Person_TreeMap,String> s:set){
+		for(Entry<PersonTreeMap,String> s:set){
 			name = s.getKey().getName();
 			score = s.getKey().getScore();
 			level = s.getValue();

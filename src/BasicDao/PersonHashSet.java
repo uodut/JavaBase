@@ -1,9 +1,9 @@
 package BasicDao;
 
-public class Person_HashSet {
-	public Person_HashSet(){
+public class PersonHashSet {
+	public PersonHashSet(){
 	}
-	public Person_HashSet(int age,String name){
+	public PersonHashSet(int age,String name){
 		this.age = age;
 		this.name = name;
 	}
@@ -37,7 +37,7 @@ public class Person_HashSet {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Person_HashSet other = (Person_HashSet) obj;
+		PersonHashSet other = (PersonHashSet) obj;
 		if (age != other.age)
 			return false;
 		if (name == null) {
