@@ -2,7 +2,7 @@ package com.util.collection.set;
 import java.util.Iterator;
 import java.util.TreeSet;
 import com.dao.PersonTreeSet;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /**
  * 
  * @author UODUT 1、 元素唯一且有序，基于TreeMap的实现。Integer能排序(有默认顺序), String能排序(有默认顺序),
@@ -34,29 +34,29 @@ public class TreeSetDemo {
     // 自然排序
     static void display2(TreeSet<Integer> treeSet) {
         for (Integer i : treeSet) {
-            LogHandler.createUnSynInstance(TreeSetDemo.class).info(i);
+            Logger.getLogger(TreeSetDemo.class).info(i);
         }
     }
     // 迭代器
     static void display1(TreeSet<PersonTreeSet> pt) {
-        LogHandler.createUnSynInstance(TreeSetDemo.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(TreeSetDemo.class).info("姓名" + '\t' + "年龄");
         Iterator<PersonTreeSet> it = pt.iterator();
         int i = 0;
         PersonTreeSet ps = null;
         while (it.hasNext()) {// Iterator的next方法每调用一次就会得到集合中的一个元素
             ps = it.next();
             // 错误的，这样会调用第一个人的姓名和第二个人的名字
-            // LogHandler.createUnSynInstance(TreeSetDemo.class).info(it.next().getName()
+            // Logger.getLogger(TreeSetDemo.class).info(it.next().getName()
             // + it.next().getAge());×
-            LogHandler.createUnSynInstance(TreeSetDemo.class).info(
+            Logger.getLogger(TreeSetDemo.class).info(
                     ps.getName() + '\t' + ps.getAge());
         }
     }
     // 对象排序-For
     static void display(TreeSet<PersonTreeSet> treeSet) {
-        LogHandler.createUnSynInstance(TreeSetDemo.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(TreeSetDemo.class).info("姓名" + '\t' + "年龄");
         for (PersonTreeSet p : treeSet) {
-            LogHandler.createUnSynInstance(TreeSetDemo.class).info(p.getName() + '\t' + p.getAge());
+            Logger.getLogger(TreeSetDemo.class).info(p.getName() + '\t' + p.getAge());
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.util.collection.list;
 import java.util.Iterator;
 import java.util.LinkedList;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /**
  * 
  * addFirst() addLast() element():获取头部元素，但是不移除此头部元素 getFirst() getLast()
@@ -25,20 +25,20 @@ public class LinkedListDemo {
         ll.add("halen");
         ll.add("chandler");
         String str = ll.pop();
-        LogHandler.createUnSynInstance(LinkedListDemo.class).info(ll.size());
+        Logger.getLogger(LinkedListDemo.class).info(ll.size());
         String str2 = ll.pop();
-        LogHandler.createUnSynInstance(LinkedListDemo.class).info(ll.size());
-        LogHandler.createUnSynInstance(LinkedListDemo.class).info(str2);
+        Logger.getLogger(LinkedListDemo.class).info(ll.size());
+        Logger.getLogger(LinkedListDemo.class).info(str2);
         ll.offer("lastelement");
         display();
-        LogHandler.createUnSynInstance(LinkedListDemo.class).info("111111111111111");
+        Logger.getLogger(LinkedListDemo.class).info("111111111111111");
         ll.removeFirstOccurrence("halen");
         display();
     }
     static void display() {
         Iterator<String> it = ll.iterator();
         while (it.hasNext()) {
-            LogHandler.createUnSynInstance(LinkedListDemo.class).info(it.next());
+            Logger.getLogger(LinkedListDemo.class).info(it.next());
         }
     }
 }

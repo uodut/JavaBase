@@ -2,7 +2,7 @@ package com.util.collection.list;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /**
  * @author UODUT
  * 
@@ -53,33 +53,33 @@ public class ArrayListDemo {
         while (it.hasNext()) {
             if (it.hasNext()) {
              // 到达集合末尾，next()方法会抛出一个NoSuchElementException异常
-                LogHandler.createUnSynInstance(ArrayListDemo.class).info(it.next());
+                Logger.getLogger(ArrayListDemo.class).info(it.next());
             }
         }
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info("--------第二种方式--------");
+        Logger.getLogger(ArrayListDemo.class).info("--------第二种方式--------");
         it.remove();
         for (String s : arrayList) {
-            LogHandler.createUnSynInstance(ArrayListDemo.class).info(s);
+            Logger.getLogger(ArrayListDemo.class).info(s);
         }
         // 集合中元素的个数
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(arrayList.size());
+        Logger.getLogger(ArrayListDemo.class).info(arrayList.size());
         // contains()区分大小写
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(arrayList.size());
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(arrayList.contains("LAST"));
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(arrayList.size() + "--------");
+        Logger.getLogger(ArrayListDemo.class).info(arrayList.size());
+        Logger.getLogger(ArrayListDemo.class).info(arrayList.contains("LAST"));
+        Logger.getLogger(ArrayListDemo.class).info(arrayList.size() + "--------");
         // retainAll(Collection<?> other)
        // get()
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(arrayList.get(0) + "-------get()");
+        Logger.getLogger(ArrayListDemo.class).info(arrayList.get(0) + "-------get()");
         // set()
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(arrayList.set(0, "orange"));
+        Logger.getLogger(ArrayListDemo.class).info(arrayList.set(0, "orange"));
         print(arrayList);
         message = "iphone出现的位置为" + arrayList.indexOf("iphone");
-        LogHandler.createUnSynInstance(ArrayListDemo.class).info(message);
+        Logger.getLogger(ArrayListDemo.class).info(message);
     }
     public static void print(List<String> arrayList) {
         Object[] array = arrayList.toArray();
         for (int i = 0; i < array.length; i++) {
-            LogHandler.createUnSynInstance(ArrayListDemo.class).info(array[i]);
+            Logger.getLogger(ArrayListDemo.class).info(array[i]);
         }
     }
 }

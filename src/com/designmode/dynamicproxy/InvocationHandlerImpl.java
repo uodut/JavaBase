@@ -1,7 +1,7 @@
 package com.designmode.dynamicproxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 public class InvocationHandlerImpl implements InvocationHandler {
     private Bird bird;
     public InvocationHandlerImpl(Bird bird) {
@@ -17,11 +17,11 @@ public class InvocationHandlerImpl implements InvocationHandler {
      */
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String info = "你将调用invoke方法，当前方法名为" + method.getName();
-        LogHandler.createUnSynInstance(InvocationHandlerImpl.class).info(info);
+        Logger.getLogger(InvocationHandlerImpl.class).info(info);
         // method.invoke(bird,null);
         method.invoke(bird, args);// 调用bird的method方法
         info = method.getName() + "已经调用完毕";
-        LogHandler.createUnSynInstance(InvocationHandlerImpl.class).info(info);
+        Logger.getLogger(InvocationHandlerImpl.class).info(info);
         return null;
     }
 }

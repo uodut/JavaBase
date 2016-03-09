@@ -2,7 +2,7 @@ package com.util.collection.set;
 import java.util.HashSet;
 import java.util.Iterator;
 import com.dao.PersonHashSet;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /**
  * 
  * @author UODUT
@@ -33,23 +33,23 @@ public class HashSetDemo {
         hashSet.add(person4);
         hashSet.add(person5);
         display2(hashSet);
-        LogHandler.createUnSynInstance(HashSetDemo.class).info(person1.hashCode());
-        LogHandler.createUnSynInstance(HashSetDemo.class).info(person5.hashCode());
-        LogHandler.createUnSynInstance(HashSetDemo.class).info(person1.equals(person5));
-        LogHandler.createUnSynInstance(HashSetDemo.class).info(hashSet.size());
+        Logger.getLogger(HashSetDemo.class).info(person1.hashCode());
+        Logger.getLogger(HashSetDemo.class).info(person5.hashCode());
+        Logger.getLogger(HashSetDemo.class).info(person1.equals(person5));
+        Logger.getLogger(HashSetDemo.class).info(hashSet.size());
     }
     static void display(HashSet<PersonHashSet> hashSet) {
         Iterator<PersonHashSet> it = hashSet.iterator();
-        LogHandler.createUnSynInstance(HashSetDemo.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(HashSetDemo.class).info("姓名" + '\t' + "年龄");
         while (it.hasNext()) {
             message = it.next().getName() + '\t' + it.next().getAge();
-            LogHandler.createUnSynInstance(HashSetDemo.class).info(message);
+            Logger.getLogger(HashSetDemo.class).info(message);
         }
     }
     static void display2(HashSet<PersonHashSet> hashSet) {
-        LogHandler.createUnSynInstance(HashSetDemo.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(HashSetDemo.class).info("姓名" + '\t' + "年龄");
         for (PersonHashSet p : hashSet) {
-            LogHandler.createUnSynInstance(HashSetDemo.class).info(p.getName() + '\t' + p.getAge());
+            Logger.getLogger(HashSetDemo.class).info(p.getName() + '\t' + p.getAge());
         }
     }
 }

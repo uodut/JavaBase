@@ -2,7 +2,7 @@ package com.util.collection.map;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /**
  * @author UODUT 基于哈希表的 Map 接口的实现 key和value都可以为空值,不同步，线程不安全。
  *         和Hashtable的区别：Hashtable键和值都不可以为null。线程安全。 包括的方法： boolean
@@ -24,23 +24,23 @@ public class HashMapDemo {
         hashMap.put("liu", 21);// 自动覆盖第一个相同的key
         hashMap.put(null, null);
         // hashMap.put(null, 0);
-        LogHandler.createUnSynInstance(HashMapDemo.class).info("--------第一种方式---------");
+        Logger.getLogger(HashMapDemo.class).info("--------第一种方式---------");
         display1(hashMap);
-        LogHandler.createUnSynInstance(HashMapDemo.class).info("--------第二种方式---------");
+        Logger.getLogger(HashMapDemo.class).info("--------第二种方式---------");
         display2(hashMap);
     }
     // 根据键找值
     static void display1(HashMap<String, Integer> hm) {
         // 得到所有的key值
         Set<String> names = hm.keySet();
-        LogHandler.createUnSynInstance(HashMapDemo.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(HashMapDemo.class).info("姓名" + '\t' + "年龄");
         for (String name : names) {
-            LogHandler.createUnSynInstance(HashMapDemo.class).info(name + '\t' + hm.get(name));
+            Logger.getLogger(HashMapDemo.class).info(name + '\t' + hm.get(name));
         }
     }
     // 根据键值对找键和值
     static void display2(HashMap<String, Integer> hm) {
-        LogHandler.createUnSynInstance(HashMapDemo.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(HashMapDemo.class).info("姓名" + '\t' + "年龄");
         String name = null;
         Integer age = null;
         // 找到set视图
@@ -48,7 +48,7 @@ public class HashMapDemo {
         for (Entry<String, Integer> s : set) {
             name = s.getKey();
             age = s.getValue();
-            LogHandler.createUnSynInstance(HashMapDemo.class).info(name + '\t' + age);
+            Logger.getLogger(HashMapDemo.class).info(name + '\t' + age);
         }
     }
 }

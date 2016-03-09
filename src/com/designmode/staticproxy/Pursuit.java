@@ -1,6 +1,6 @@
 package com.designmode.staticproxy;
 
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 
 /**
  * 2016年3月1日
@@ -14,12 +14,12 @@ public class Pursuit implements GiveGift {
     }
     @Override
     public void sendFlower() {
-        LogHandler.createUnSynInstance(Pursuit.class).info("Pursuit送给" + girl.getName() + "的花");
+        Logger.getLogger(Pursuit.class).info("Pursuit送给" + girl.getName() + "的花");
         //System.out.println("Pursuit送给" + girl.getName() + "的花");
     }
     @Override
     public void giveDolls() {
-        LogHandler.createUnSynInstance(Pursuit.class).info("Pursuit送给" + girl.getName() + "的布偶");
+        Logger.getLogger(Pursuit.class).info("Pursuit送给" + girl.getName() + "的布偶");
        // System.out.println("Pursuit送给" + girl.getName() + "的布偶");
     }
 }

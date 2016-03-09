@@ -2,7 +2,7 @@ package com.util.collection.set;
 import java.util.TreeSet;
 import java.util.Comparator;//比较器
 import com.dao.PersonTreeSet2;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 public class TreeSetDemo2 {
     private static String message = null;
     public static void main(String[] args) {
@@ -39,13 +39,13 @@ public class TreeSetDemo2 {
 		   }
 		   });*/
         display(treeSet);
-        LogHandler.createUnSynInstance(TreeSetDemo2.class).info(treeSet.size());
+        Logger.getLogger(TreeSetDemo2.class).info(treeSet.size());
     }
     static void display(TreeSet<PersonTreeSet2> treeSet) {
-        LogHandler.createUnSynInstance(TreeSetDemo2.class).info("姓名" + '\t' + "年龄");
+        Logger.getLogger(TreeSetDemo2.class).info("姓名" + '\t' + "年龄");
         for (PersonTreeSet2 p : treeSet) {
             message= p.getName() + '\t' + p.getAge();
-            LogHandler.createUnSynInstance(TreeSetDemo2.class).info(message);
+            Logger.getLogger(TreeSetDemo2.class).info(message);
         }
     }
 }

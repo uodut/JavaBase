@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 public class IODemo {
     private static String message = null;
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class IODemo {
         InputStream is = null;
         try {
             message= "以字节为单位读取文件内容，一次读一个字节：";
-            LogHandler.createUnSynInstance(IODemo.class).info(message);
+            Logger.getLogger(IODemo.class).info(message);
             is = new FileInputStream(f);
             int temp;
             while ((temp = is.read()) != -1) {
@@ -42,7 +42,7 @@ public class IODemo {
         // 一次读多个字节
         try {
             message = "以字节为单位读取文件内容，一次读一个字节：";
-            LogHandler.createUnSynInstance(IODemo.class).info(message);
+            Logger.getLogger(IODemo.class).info(message);
             byte[] tempbytes = new byte[100];
             is = new FileInputStream(f);
             int byteRead;
@@ -69,7 +69,7 @@ public class IODemo {
         Reader read = null;
         int temp;
         try {
-            LogHandler.createUnSynInstance(IODemo.class).info("以字符为单位，一次读取一个字符");
+            Logger.getLogger(IODemo.class).info("以字符为单位，一次读取一个字符");
             read = new InputStreamReader(new FileInputStream(f));
             while ((temp = read.read()) != -1) {// read()方法返回读取到的字符的int值
                 // 对于windows下，\r\n这两个字符在一起时，表示一个换行。
@@ -85,8 +85,8 @@ public class IODemo {
             e.printStackTrace();
         }
         try {
-            //LogHandler.createUnSynInstance(IODemo.class).info;
-            LogHandler.createUnSynInstance(IODemo.class).info("以字符为单位，一次读取多个字符");
+            //Logger.getLogger(IODemo.class).info;
+            Logger.getLogger(IODemo.class).info("以字符为单位，一次读取多个字符");
             read = new InputStreamReader(new FileInputStream(f));
             char[] tempChar = new char[30];
             int tempValue;

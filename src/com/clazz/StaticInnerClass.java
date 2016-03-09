@@ -1,14 +1,12 @@
 package com.clazz;
-
-import com.log.LogHandler;
-
+import org.apache.log4j.Logger;
 public class StaticInnerClass {
     private int age = 10;
     private static String name = "tudou";
     static class In {
         void print() {
             // System.out.println(age);//不能访问外部类的非静态成员。这就像是静态方法中不能调用非静态变量一样.
-            LogHandler.createUnSynInstance(PlainInnerClass.class).info(name);
+            Logger.getLogger(PlainInnerClass.class).info(name);
         }
     }
     public static void main(String[] args) {

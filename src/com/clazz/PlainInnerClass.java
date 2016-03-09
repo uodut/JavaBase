@@ -1,7 +1,5 @@
 package com.clazz;
-
-import com.log.LogHandler;
-
+import org.apache.log4j.Logger;
 /**
  * 好处：因为内部类可以随意使用外部类的成员变量（包括私有）而不用生成外部类的对象 内部类和外部类的成员变量和访问规则
  *
@@ -12,12 +10,12 @@ public class PlainInnerClass {
         private int age = 12;
         public void print() {
             int age = 13;
-            LogHandler.createUnSynInstance(PlainInnerClass.class).info("内部类的变量" + age);
-            LogHandler.createUnSynInstance(PlainInnerClass.class).info("内部成员变量" + this.age);
-            LogHandler.createUnSynInstance(PlainInnerClass.class).info(PlainInnerClass.this.age);
+            Logger.getLogger(PlainInnerClass.class).info("内部类的变量" + age);
+            Logger.getLogger(PlainInnerClass.class).info("内部成员变量" + this.age);
+            Logger.getLogger(PlainInnerClass.class).info(PlainInnerClass.this.age);
         }
         private void print2() {
-            LogHandler.createUnSynInstance(PlainInnerClass.class).info("外部类的私有变量" + age);
+            Logger.getLogger(PlainInnerClass.class).info("外部类的私有变量" + age);
         }
     }
     public static void main(String[] args) {

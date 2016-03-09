@@ -8,3 +8,4 @@ ctrl+.及ctrl+1：下一个错误及快速修改
 Shift+enter在当前行之下创建一个空白行，与光标是否在行末无关。
 Ctrl+shift+enter则在当前行之前插入空白行。
 ctrl+PageUp/PageDown:切换编辑器 ctrl+e:搜索所有的编辑器
+ctrl+H：->file search:替换工程内声明的变量

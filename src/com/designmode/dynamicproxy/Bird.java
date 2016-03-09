@@ -1,16 +1,16 @@
 package com.designmode.dynamicproxy;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 public class Bird implements Sound, Flyable {
     @Override
     public void fly() {
         // TODO Auto-generated method stub
-        //LogHandler.createUnSynInstance(PlainInnerClass.class).info("外部类的私有变量" + age);
-        LogHandler.createUnSynInstance(Bird.class).info("Bird can fly");
+        //Logger.getLogger(PlainInnerClass.class).info("外部类的私有变量" + age);
+        Logger.getLogger(Bird.class).info("Bird can fly");
         
     }
     @Override
     public void sound() {
         // TODO Auto-generated method stub
-        LogHandler.createUnSynInstance(Bird.class).info("Bird can speak");
+        Logger.getLogger(Bird.class).info("Bird can speak");
     }
 }

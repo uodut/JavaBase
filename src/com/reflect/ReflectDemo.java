@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import com.dao.PersonReflect;
 import com.dao.PersonReflectSon;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /*
  1、Java反射的概念
  反射含义：可以获取正在运行的Java对象。
@@ -46,18 +46,18 @@ public class ReflectDemo {
         // 获取指定的包名
         String packageName1 = c1.getPackage().getName();// out->BasicDao
         String packageName2 = c2.getPackage().getName();// out->BasicDao
-        LogHandler.createUnSynInstance(ReflectDemo.class).info("包名为：" + packageName1);
+        Logger.getLogger(ReflectDemo.class).info("包名为：" + packageName1);
         // 获取类的修饰符
         int mod = c1.getModifiers();
         String modifier = Modifier.toString(mod);
         message = "类的修饰符为：" + modifier + "  " + "mod值为:" + String.valueOf(mod);
-        LogHandler.createUnSynInstance(ReflectDemo.class).info(message);
+        Logger.getLogger(ReflectDemo.class).info(message);
         // 获取指定类的完全限定名
         String className = c1.getName();
-        LogHandler.createUnSynInstance(ReflectDemo.class).info("类完全限定名称为：" + className);
+        Logger.getLogger(ReflectDemo.class).info("类完全限定名称为：" + className);
         // 获取指定类的父类(向上一级)
         Class<?> superClazz = c3.getSuperclass();
-        LogHandler.createUnSynInstance(ReflectDemo.class).info(superClazz.getName());
+        Logger.getLogger(ReflectDemo.class).info(superClazz.getName());
         // 获取实现的接口集合
         Class<?>[] interfaces = c1.getInterfaces();
         for (Class<?> clazz : interfaces) {
@@ -71,10 +71,10 @@ public class ReflectDemo {
             String name = field.getName();// 获取字段名
             if (type.isArray()) {// 如果是数组类型则需要特别处理
                 String arrType = type.getComponentType().getName() + "[]";
-                LogHandler.createUnSynInstance(ReflectDemo.class).info(
+                Logger.getLogger(ReflectDemo.class).info(
                         modifier + '\t' + arrType + '\t' + name + ";");
             } else {
-                LogHandler.createUnSynInstance(ReflectDemo.class).info(
+                Logger.getLogger(ReflectDemo.class).info(
                         modifier + '\t' + type + '\t' + name + ";");
             }
         }
@@ -83,23 +83,23 @@ public class ReflectDemo {
         for (Constructor c : construct) {
             String name = c.getName();// 构造方法名
             modifier = Modifier.toString(c.getModifiers());// 修饰符
-            LogHandler.createUnSynInstance(ReflectDemo.class)
+            Logger.getLogger(ReflectDemo.class)
                     .info("" + modifier + " " + name + "(");
             Class<?>[] parameters = c.getParameterTypes();// 构造方法的参数
             for (int i = 0; i < parameters.length; i++) {
                 if (i > 0){
-                    LogHandler.createUnSynInstance(ReflectDemo.class).info(" (");
+                    Logger.getLogger(ReflectDemo.class).info(" (");
                 }
                 if (parameters[i].isArray()) {
-                    LogHandler.createUnSynInstance(ReflectDemo.class).info(
+                    Logger.getLogger(ReflectDemo.class).info(
                             parameters[i].getComponentType().getName() + "[]");
                 } else {
-                    LogHandler.createUnSynInstance(ReflectDemo.class).info(parameters[i].getName());
+                    Logger.getLogger(ReflectDemo.class).info(parameters[i].getName());
                 }
             }
-            LogHandler.createUnSynInstance(ReflectDemo.class).info(");");
+            Logger.getLogger(ReflectDemo.class).info(");");
         }
-        LogHandler.createUnSynInstance(ReflectDemo.class).info(
+        Logger.getLogger(ReflectDemo.class).info(
                 "-----------------------成员方法---------------------");
         // 获取成员方法 public static void main(String[] args)
         Method[] methods = c1.getMethods();
@@ -110,10 +110,10 @@ public class ReflectDemo {
             // 获取返回值类型
             Class<?> returnType = method.getReturnType();
             if (returnType.isArray()){
-                LogHandler.createUnSynInstance(ReflectDemo.class).info(
+                Logger.getLogger(ReflectDemo.class).info(
                         returnType.getComponentType().getName() + "[]");
             } else{
-                LogHandler.createUnSynInstance(ReflectDemo.class).info(returnType.getName());
+                Logger.getLogger(ReflectDemo.class).info(returnType.getName());
             }
             // 成员方法名称
             method.getName();
@@ -124,7 +124,7 @@ public class ReflectDemo {
                 PT.getTypeName();
             }
         }
-        LogHandler.createUnSynInstance(ReflectDemo.class).info(
+        Logger.getLogger(ReflectDemo.class).info(
                 "---------------方法使用--------------------");
         executeMethod(c1);
     }
@@ -134,10 +134,10 @@ public class ReflectDemo {
         PersonReflect pr = (PersonReflect) c.newInstance();
         Method method = c.getDeclaredMethod("setName", String.class);
         method.invoke(pr, "tudou");
-        LogHandler.createUnSynInstance(ReflectDemo.class).info(pr.getName());
+        Logger.getLogger(ReflectDemo.class).info(pr.getName());
         method = c.getDeclaredMethod("setAge", int.class);// 参数第一个表示方法名称，第二个参数类型
         method.setAccessible(true);
         method.invoke(pr, 20);
-        LogHandler.createUnSynInstance(ReflectDemo.class).info(pr.getAge());
+        Logger.getLogger(ReflectDemo.class).info(pr.getAge());
     }
 }

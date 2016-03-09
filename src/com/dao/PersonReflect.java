@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 
 public class PersonReflect {
     private int age;
@@ -47,7 +47,7 @@ public class PersonReflect {
     public void display(String order) {
         // System.out.println("Person_Reflect里面的display()方法" + order);
         order = "Person_Reflect里面的display()方法" + order;
-        LogHandler.createUnSynInstance(PersonReflect.class).info(order);
+        Logger.getLogger(PersonReflect.class).info(order);
     }
     // 私有方法
     private boolean isMarray() {

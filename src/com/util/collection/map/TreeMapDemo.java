@@ -4,7 +4,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import com.dao.PersonTreeMap;
-import com.log.LogHandler;
+import org.apache.log4j.Logger;
 /**
  * 底层实现为红黑树（一种自平衡的二叉查找树）
  * 1、TreeMap根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序
@@ -103,18 +103,18 @@ public class TreeMapDemo {
         tm.put(new PersonTreeMap(90, "monica"), "第三名");
         tm.put(new PersonTreeMap(59, "zack"), "第四名");
         // 第一种方法
-        LogHandler.createUnSynInstance(HashMapDemo.class).info("---------第一种方法-----------");
+        Logger.getLogger(HashMapDemo.class).info("---------第一种方法-----------");
         display1(tm);
-        LogHandler.createUnSynInstance(HashMapDemo.class).info("---------第二种方法-----------");
+        Logger.getLogger(HashMapDemo.class).info("---------第二种方法-----------");
         display2(tm);
     }
     // 根据key找value，遍历
     static void display1(TreeMap<PersonTreeMap, String> tm) {
         Set<PersonTreeMap> set = tm.keySet();
         message = "姓名" + '\t' + "分数" + '\t' + "排名";
-        LogHandler.createUnSynInstance(HashMapDemo.class).info(message);
+        Logger.getLogger(HashMapDemo.class).info(message);
         for (PersonTreeMap pt : set) {
-            LogHandler.createUnSynInstance(HashMapDemo.class).info(
+            Logger.getLogger(HashMapDemo.class).info(
                     pt.getName() + '\t' + pt.getScore() + '\t' + tm.get(pt));
         }
     }
@@ -125,12 +125,12 @@ public class TreeMapDemo {
         Integer score = null;
         String level = null;
         message = "姓名" + '\t' + "分数" + '\t' + "排名";
-        LogHandler.createUnSynInstance(HashMapDemo.class).info(message);
+        Logger.getLogger(HashMapDemo.class).info(message);
         for (Entry<PersonTreeMap, String> s : set) {
             name = s.getKey().getName();
             score = s.getKey().getScore();
             level = s.getValue();
-            LogHandler.createUnSynInstance(HashMapDemo.class).info(
+            Logger.getLogger(HashMapDemo.class).info(
                     name + '\t' + score + '\t' + level);
         }
     }
